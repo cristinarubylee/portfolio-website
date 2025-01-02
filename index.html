@@ -5,13 +5,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cristina Ruby Lee</title>
-    <link rel="icon" href="images/gorilla.png">
+    <link rel="icon" href="images/logo.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Hello World!</h1>
-</body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Logo featuring a leaf design with the initials 'C R L' placed within the leaf's shape.">
+            </a>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            &#9776;
+        </div>
+        <nav class="header-nav"> 
+            <ul>
+                <li><a href="#portfolio">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://www.linkedin.com/in/cristina-lee-b6a333242/">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <div class="container">
+    <!-- Hero Section -->
+     <section class="hero">
+        <div class="hero-text">
+            <h1>Hi there!<br>My name is Cristina Ruby Lee.
+            </h1>
+            <p>
+                I’m an undergraduate programmer with a passion for exploring and learning to work with diverse technological tools. This website is a work in progress, reflecting my journey as I develop new web development skills and techniques. Feel free to check back from time to time to see how it evolves!</p>
+        </div>
+     </section>
+
+    <!-- About Section -->
+    <!-- <section id="about" class="about-section">
+        <h2>About Me</h2>
+        <p>I'm a web developer with a knack for turning creative ideas into functional and engaging designs. My skills span across front-end and back-end development, ensuring seamless user experiences. Outside of coding, I love exploring art and technology trends.</p>
+    </section> -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <h2>Projects</h2>
+        <div class="portfolio-cards">
+            <a href="https://github.coecis.cornell.edu/cc2524/Final-Project">
+                <div class="portfolio-card">
+                    <img src="images/unitlife.png" alt="Unit(Life)">
+                    <h3>Unit(Life)</h3>
+                    <p>A life simulation game developed in OCaml as the final project for Cornell’s CS 3110 course.</p>
+                </div>
+            </a>
+            <a href="https://github.coecis.cornell.edu/Studio-Sunrise/knead-for-speed">
+                <div class="portfolio-card">
+                    <img src="images/kneadforspeed.png" alt="Knead For Speed">
+                    <h3>Knead For Speed</h3>
+                    <p>A stealth-action game with a sweet-treat theme, created in Java using the LibGDX game engine.</p>
+                </div>
+            </a>
+            <a href="https://github.com/cristinarubylee/landing-page">
+                <div class="portfolio-card">
+                    <img src="images/landingpage.png" alt="Gorilla Bureaucracy Landing Page">
+                    <h3>Landing Page</h3>
+                    <p>A simple business landing page built for the Odin Project’s web development curriculum.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Let's Talk :D</h2>
+        <p>If you'd like to work together or just say hi, feel free to reach out!</p>
+        <form class="contact-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>Copyright &copy; Cristina Lee 2024.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+
+</body>
 
 </html>
