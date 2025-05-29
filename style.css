@@ -1,11 +1,27 @@
 /* General Styles */
+:root {
+  --bg: #ffffff;
+  --bg-secondary: #e1e1e1;
+  --text: #000411;
+  --accent: #2962FF;
+  --accent-secondary: #FF3B3B; /* Red */
+}
+
+.dark {
+  --bg: #0A0E16;
+  --bg-secondary: #01143c;
+  --text: #ffffff;
+  --accent: #3569f5;
+  --accent-secondary: #FF3B3B;
+}
+
 body {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Inter', 'Manrope', 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #f0e5c7;
-  color: #473f34;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 a {
@@ -23,21 +39,19 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #f0e5c7;
+  background-color: var(--bg-secondary);
+  opacity: 1;
   color: #473f34;
   position: sticky;
   top: 0;
   z-index: 999;
-  border-radius: 0 0 10px 10px; 
-  box-shadow: 0 3px 10px #473f34; /* Bottom shadow */
+  font-weight: bold;
 }
 
 .header-logo a {
   display: flex;
   align-items: center;
-  color: #473f34;
   font-size: 34px;
-  font-weight: bold;
   gap: 0.5rem;
 }
 
@@ -56,14 +70,14 @@ a {
 }
 
 .header-nav ul li a {
-  color: #473f34;
+  color: var(--accent);
   font-size: 1.2rem;
   padding: 10px;
   border-radius: 5px;
 }
 
 .header-nav ul li a:hover {
-  background-color: #c8bfa6;
+  background-color: var(--bg);
 }
 
 /* Menu Toggle for Small Screens */
@@ -80,14 +94,22 @@ a {
 
 /* Hero Section */
 .hero {
+  color: var(--accent);
   text-align: center;
   padding: 50px 10%;
-  background-color: #8c9657;
-  color: #473f34;
 }
 
 .hero-text {
   text-align: left;
+}
+
+#ruby {
+  text-decoration: underline;
+  color: var(--accent);
+}
+
+#ruby:hover {
+  color: var(--accent-secondary);
 }
 
 .hero-text h1 {
@@ -110,13 +132,15 @@ a {
 .hero h1 {
   font-size: 48px;
   font-weight: 900;
-  font-family: 'Lucida Console', Geneva, sans-serif;
+  /* font-family: 'Lucida Console', Geneva, sans-serif; */
 }
 
 .hero-text p {
   font-size: 20px;
   padding: 20px 0;
+  color: var(--text);
 }
+
 /* About Section */
 .about-section {
   padding: 50px 10%;
@@ -138,7 +162,7 @@ a {
 /* Portfolio Section */
 .portfolio-section {
   padding: 100px 10%;
-  background-color: #f0e5c7;
+  background-color: var(--bg-secondary);
 }
 
 .portfolio-section h2 {
@@ -146,8 +170,8 @@ a {
   margin: 0px;
   margin-bottom: 2rem;
   text-align: center;
-  color: #473f34;
-  font-family: 'Lucida Console', Geneva, sans-serif;
+  color: var(--accent);
+  /* font-family: 'Lucida Console', Geneva, sans-serif; */
 }
 
 .portfolio-cards {
@@ -158,8 +182,7 @@ a {
 }
 
 .portfolio-card {
-  background-color: #f0e5c7;
-  border: 1px solid #473f34;
+  border: 4px solid var(--accent-secondary);
   border-radius: 10px;
   width: 300px;
   padding: 1rem;
@@ -180,19 +203,18 @@ a {
 
 .portfolio-card h3 {
   font-size: 1.2rem;
-  color: #473f34;
+  color: var(--text);
 }
 
 .portfolio-card p {
   font-size: 0.9rem;
-  color: #473f34;
+  color: var(--text);
 }
 
 /* Contact Section */
 .contact-section {
   padding: 100px 10%;
   text-align: center;
-  background-color: #8c9657;
 }
 
 .contact-section h2 {
@@ -229,7 +251,7 @@ a {
 
 .contact-section button {
   padding: 0.8rem;
-  background-color: #473f34;
+  background-color: var(--accent-secondary);;
   color: #f0e5c7;
   border: none;
   border-radius: 5px;
@@ -241,13 +263,12 @@ a {
 }
 
 .contact-section button:hover {
-  background-color: #363030;
+  background-color: var(--accent-secondary);
 }
 
 /* Footer */
 .footer {
-  background-color: #473f34;
-  color: #f0e5c7;
+  background-color: var(--bg-secondary);
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
