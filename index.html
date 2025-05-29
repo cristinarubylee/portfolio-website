@@ -58,6 +58,13 @@
                     <p>A life simulation game developed in OCaml as the final project for Cornell’s CS 3110 course.</p>
                 </div>
             </a>
+            <a href="https://youtu.be/pu22NYmKIgE">
+                <div class="portfolio-card">
+                    <img src="images/unitlife.png" alt="Unit(Life)">
+                    <h3>Unit(Life)</h3>
+                    <p>A life simulation game developed in OCaml as the final project for Cornell’s CS 3110 course.</p>
+                </div>
+            </a>
             <a href="https://gdiac.cs.cornell.edu/gdiac/showcase/gallery/kneadforspeed/">
                 <div class="portfolio-card">
                     <img src="images/kneadforspeed.png" alt="Knead For Speed">
@@ -79,7 +86,7 @@
     <section id="contact" class="contact-section">
         <h2>Let's Talk :D</h2>
         <p>If you'd like to work together or just say hi, feel free to reach out!</p>
-        <form class="contact-form">
+        <form method="post">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required>
 
@@ -89,8 +96,11 @@
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="5" required></textarea>
 
+            <div class="g-recaptcha" data-sitekey="6LenHU8rAAAAANwbBiC5WbHmhPl_BzC1DWb5mCtt"></div>
+
             <button type="submit">Send Message</button>
         </form>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </section>
     </div>
 
