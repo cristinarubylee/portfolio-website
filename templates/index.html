@@ -5,16 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cristina Ruby Lee</title>
-    <link rel="icon" href="images/ruby.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="{{ url_for('static', filename='images/ruby.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
 <body>
     <!-- Header Section -->
     <header class="header">
         <div class="header-logo">
             <a href="index.html">
-                <img src="images/ruby.png" alt="Logo featuring a leaf design with the initials 'C R L' placed within the leaf's shape.">
+                <img src="{{ url_for('static', filename='images/ruby.png') }}" alt="Logo featuring a leaf design with the initials 'C R L' placed within the leaf's shape.">
             </a>
         </div>
         <div class="menu-toggle" onclick="toggleMenu()">
@@ -41,40 +40,34 @@
         </div>
      </section>
 
-    <!-- About Section -->
-    <!-- <section id="about" class="about-section">
-        <h2>About Me</h2>
-        <p>I'm a web developer with a knack for turning creative ideas into functional and engaging designs. My skills span across front-end and back-end development, ensuring seamless user experiences. Outside of coding, I love exploring art and technology trends.</p>
-    </section> -->
-
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio-section">
         <h2>Projects</h2>
         <div class="portfolio-cards">
             <a href="https://youtu.be/pu22NYmKIgE">
                 <div class="portfolio-card">
-                    <img src="images/unitlife.png" alt="Unit(Life)">
+                    <img src="{{ url_for('static', filename='images/unitlife.png') }}" alt="Unit(Life)">
                     <h3>Unit(Life)</h3>
                     <p>A life simulation game developed in OCaml as the final project for Cornell’s CS 3110 course.</p>
                 </div>
             </a>
             <a href="https://youtu.be/pu22NYmKIgE">
                 <div class="portfolio-card">
-                    <img src="images/unitlife.png" alt="Unit(Life)">
+                    <img src="{{ url_for('static', filename='images/unitlife.png') }}" alt="Unit(Life)">
                     <h3>Unit(Life)</h3>
                     <p>A life simulation game developed in OCaml as the final project for Cornell’s CS 3110 course.</p>
                 </div>
             </a>
             <a href="https://gdiac.cs.cornell.edu/gdiac/showcase/gallery/kneadforspeed/">
                 <div class="portfolio-card">
-                    <img src="images/kneadforspeed.png" alt="Knead For Speed">
+                    <img src="{{ url_for('static', filename='images/kneadforspeed.png') }}" alt="Knead For Speed">
                     <h3>Knead For Speed</h3>
                     <p>A stealth-action game with a sweet-treat theme, created in Java using the LibGDX game engine.</p>
                 </div>
             </a>
             <a href="https://github.com/cristinarubylee/landing-page">
                 <div class="portfolio-card">
-                    <img src="images/landingpage.png" alt="Gorilla Bureaucracy Landing Page">
+                    <img src="{{ url_for('static', filename='images/landingpage.png') }}" alt="Gorilla Bureaucracy Landing Page">
                     <h3>Landing Page</h3>
                     <p>A simple business landing page built for the Odin Project’s web development curriculum.</p>
                 </div>
@@ -85,8 +78,7 @@
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <h2>Let's Talk :D</h2>
-        <p>If you'd like to work together or just say hi, feel free to reach out!</p>
-        <form method="post">
+        <form id="contactForm" method="post" action="/contact">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required>
 
@@ -109,7 +101,7 @@
         <p>Copyright &copy; Cristina Lee 2025.</p>
     </footer>
 
-    <script src="script.js" defer></script>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
 
 </body>
 
