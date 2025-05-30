@@ -12,7 +12,7 @@
     <!-- Header Section -->
     <header class="header">
         <div class="header-logo">
-            <a href="index.html">
+            <a href="" onclick="smoothScroll(event, 'top')">
                 <img src="{{ url_for('static', filename='images/ruby.png') }}" alt="Logo featuring a leaf design with the initials 'C R L' placed within the leaf's shape.">
             </a>
         </div>
@@ -21,8 +21,8 @@
         </div>
         <nav class="header-nav"> 
             <ul>
-                <li><a href="#portfolio">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="" onclick="smoothScroll(event, 'portfolio')">Projects</a></li>
+                <li><a href="" onclick="smoothScroll(event, 'contact')">Contact</a></li>
                 <li><a href="https://www.linkedin.com/in/cristina-lee-b6a333242/">LinkedIn</a></li>
                 <li><button onclick="toggleDarkMode()">Switch</button></li>
             </ul>

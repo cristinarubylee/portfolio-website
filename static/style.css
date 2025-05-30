@@ -285,40 +285,40 @@ a {
   }
 
   .header-logo {
-      flex: 1;
+    flex: 1;
   }
 
   .header-logo img {
-      width: 30px;
+    width: 30px;
   }
 
   .header-nav ul {
-      display: none;
-      flex-direction: column;
-      background-color: #473f34;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      text-align: center;
+    display: none;
+    flex-direction: column;
+    background-color: #473f34;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
   }
 
   .header-nav ul.show {
-      display: flex;
+    display: flex;
   }
 
   .header-nav ul li a {
-      display: block;
-      padding: 1rem;
-      font-size: 1rem;
-      color: #f0e5c7;
+    display: block;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #f0e5c7;
   }
 
   .header-nav ul li a:hover {
-      background-color: #363030;
+    background-color: #363030;
   }
 
   .menu-toggle {
-      display: block;
+    display: block;
   }
 }
