@@ -7,6 +7,7 @@
     <title>Cristina Ruby Lee</title>
     <link rel="icon" href="{{ url_for('static', filename='images/ruby.png') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 </head>
 <body>
     <!-- Header Section -->
@@ -43,7 +44,7 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio-section">
         <h2>Projects</h2>
-        <div class="portfolio-cards">
+        <div class="portfolio-carousel" data-flickity='{ "wrapAround": true, "autoPlay": 3000 }'>
             <a href="https://youtu.be/pu22NYmKIgE">
                 <div class="portfolio-card">
                     <img src="{{ url_for('static', filename='images/unitlife.png') }}" alt="Unit(Life)">
@@ -101,6 +102,7 @@
         <p>Copyright &copy; Cristina Lee 2025.</p>
     </footer>
 
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="{{ url_for('static', filename='script.js') }}" defer></script>
 
 </body>

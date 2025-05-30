@@ -13,7 +13,6 @@ function toggleDarkMode() {
 }
 
 function smoothScroll(event, sectionId) {  
-  console.log("Scrolling!")
   event.preventDefault(); 
 
   if (sectionId == 'top'){
