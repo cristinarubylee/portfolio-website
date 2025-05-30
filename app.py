@@ -35,7 +35,7 @@ def contact():
         if not captcha_verify.get("success"):
             return jsonify({"success": False, "message": "reCAPTCHA verification failed. Please try again."})
 
-        # Form data
+        # # Form data
         name = request.form["name"]
         email = request.form["email"]
         message = request.form["message"]
@@ -48,7 +48,7 @@ def contact():
             body=f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
         )
         mail.send(msg)
-        return jsonify({"success": True, "message": "reCAPTCHA verification failed. Please try again."})
+        return jsonify({"success": True, "message": "Message successfully sent!"})
 
 if __name__ == "__main__":
     app.run(debug=True)
