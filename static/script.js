@@ -57,131 +57,131 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Code for scrolling through sections with mouse and arrow keys
-document.addEventListener('wheel', handleScroll, { passive: false });
-document.addEventListener('keydown', handleKeyDown);
+// document.addEventListener('wheel', handleScroll, { passive: false });
+// document.addEventListener('keydown', handleKeyDown);
 
-let touchStartY = 0;
-let touchEndY = 0;
-const minSwipeDistance = 50;
-document.addEventListener('touchstart', handleTouchStart, { passive: true });
-document.addEventListener('touchend', handleTouchEnd, { passive: false });
-document.addEventListener('touchmove', (event) => {
-  if (isSwiping && !isInteractiveElement(event.target)) {
-    event.preventDefault();
-  }
-}, { passive: false });
+// let touchStartY = 0;
+// let touchEndY = 0;
+// const minSwipeDistance = 50;
+// document.addEventListener('touchstart', handleTouchStart, { passive: true });
+// document.addEventListener('touchend', handleTouchEnd, { passive: false });
+// document.addEventListener('touchmove', (event) => {
+//   if (isSwiping && !isInteractiveElement(event.target)) {
+//     event.preventDefault();
+//   }
+// }, { passive: false });
 
-let isScrolling = false;
-let isSwiping = false;
-let currentSection = "top";
-let isCentered = true;
-const sectionOrder = ["top", "portfolio", "contact"];
+// let isScrolling = false;
+// let isSwiping = false;
+// let currentSection = "top";
+// let isCentered = true;
+// const sectionOrder = ["top", "portfolio", "contact"];
 
-function handleTouchStart(event) {
-  if (isInteractiveElement(event.target)) {
-    return;
-  }
-  touchStartY = event.touches[0].clientY;
-  isSwiping = true;
-}
+// function handleTouchStart(event) {
+//   if (isInteractiveElement(event.target)) {
+//     return;
+//   }
+//   touchStartY = event.touches[0].clientY;
+//   isSwiping = true;
+// }
 
-function handleTouchEnd(event) {
-  if (isScrolling) {
-    event.preventDefault();
-    return;
-  }
+// function handleTouchEnd(event) {
+//   if (isScrolling) {
+//     event.preventDefault();
+//     return;
+//   }
   
-  touchEndY = event.changedTouches[0].clientY;
-  const swipeDistance = touchStartY - touchEndY;
+//   touchEndY = event.changedTouches[0].clientY;
+//   const swipeDistance = touchStartY - touchEndY;
   
-  // Only trigger if swipe distance is significant enough
-  if (Math.abs(swipeDistance) < minSwipeDistance) {
-    return;
-  }
+//   // Only trigger if swipe distance is significant enough
+//   if (Math.abs(swipeDistance) < minSwipeDistance) {
+//     return;
+//   }
   
-  const direction = swipeDistance > 0 ? 1 : -1;
-  navigateToSection(direction, event);
-}
+//   const direction = swipeDistance > 0 ? 1 : -1;
+//   navigateToSection(direction, event);
+// }
 
-function isInteractiveElement(element) {
-  // Check if element or any parent is interactive
-  const interactiveSelectors = 'a, button, input, textarea, select, [onclick], .clickable, svg, path';
-  return element.closest(interactiveSelectors) !== null;
-}
+// function isInteractiveElement(element) {
+//   // Check if element or any parent is interactive
+//   const interactiveSelectors = 'a, button, input, textarea, select, [onclick], .clickable, svg, path';
+//   return element.closest(interactiveSelectors) !== null;
+// }
 
-function handleScroll(event) {
-  if (isScrolling) {
-    event.preventDefault();
-    return;
-  }
-  const direction = event.deltaY > 0 ? 1 : -1;
-  navigateToSection(direction, event);
-}
+// function handleScroll(event) {
+//   if (isScrolling) {
+//     event.preventDefault();
+//     return;
+//   }
+//   const direction = event.deltaY > 0 ? 1 : -1;
+//   navigateToSection(direction, event);
+// }
 
-function handleKeyDown(event) {
-  if (event.key !== 'ArrowUp' && event.key !== 'ArrowDown') {
-    return;
-  }
+// function handleKeyDown(event) {
+//   if (event.key !== 'ArrowUp' && event.key !== 'ArrowDown') {
+//     return;
+//   }
 
-  if (isScrolling) {
-    event.preventDefault();
-    return;
-  }
+//   if (isScrolling) {
+//     event.preventDefault();
+//     return;
+//   }
 
-  const direction = event.key === 'ArrowDown' ? 1 : -1;
-  navigateToSection(direction, event);
-}
+//   const direction = event.key === 'ArrowDown' ? 1 : -1;
+//   navigateToSection(direction, event);
+// }
 
-function navigateToSection(direction, event) {
-  const currentIndex = sectionOrder.indexOf(currentSection);
-  const nextIndex = currentIndex + direction;
+// function navigateToSection(direction, event) {
+//   const currentIndex = sectionOrder.indexOf(currentSection);
+//   const nextIndex = currentIndex + direction;
 
-  if (nextIndex < 0 || nextIndex >= sectionOrder.length) {
-    isCentered = false;
-    return;
-  }
+//   if (nextIndex < 0 || nextIndex >= sectionOrder.length) {
+//     isCentered = false;
+//     return;
+//   }
 
-  event.preventDefault();
-  const nextSection = isCentered ? sectionOrder[nextIndex] : currentSection;
-  isScrolling = true;
+//   event.preventDefault();
+//   const nextSection = isCentered ? sectionOrder[nextIndex] : currentSection;
+//   isScrolling = true;
 
-  smoothScroll(event, nextSection, () => {
-    currentSection = nextSection;
-    isScrolling = false;
-    isCentered = true;
-  });
-}
+//   smoothScroll(event, nextSection, () => {
+//     currentSection = nextSection;
+//     isScrolling = false;
+//     isCentered = true;
+//   });
+// }
 
-function smoothScroll(event, sectionId, callback) {  
-  event.preventDefault(); 
+// function smoothScroll(event, sectionId, callback) {  
+//   event.preventDefault(); 
 
-  if (sectionId == 'top'){
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  } else {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
+//   if (sectionId == 'top'){
+//     window.scrollTo({ top: 0, behavior: 'smooth' });
+//   } else {
+//     const section = document.getElementById(sectionId);
+//     if (section) {
+//         section.scrollIntoView({ behavior: 'smooth' });
+//     }
+//   }
 
-  if (callback && typeof callback === 'function') {
-    detectScrollEnd(callback);
-  }
-}
+//   if (callback && typeof callback === 'function') {
+//     detectScrollEnd(callback);
+//   }
+// }
 
-function detectScrollEnd(callback) {
-  let lastScrollTop = window.pageYOffset;
+// function detectScrollEnd(callback) {
+//   let lastScrollTop = window.pageYOffset;
   
-  function checkScrollEnd() {
-    const currentScrollTop = window.pageYOffset;
+//   function checkScrollEnd() {
+//     const currentScrollTop = window.pageYOffset;
     
-    if (currentScrollTop === lastScrollTop) {
-      callback();
-    } else {
-      lastScrollTop = currentScrollTop;
-      setTimeout(checkScrollEnd, 20);
-    }
-  }
+//     if (currentScrollTop === lastScrollTop) {
+//       callback();
+//     } else {
+//       lastScrollTop = currentScrollTop;
+//       setTimeout(checkScrollEnd, 20);
+//     }
+//   }
   
-  setTimeout(checkScrollEnd, 80);
-}
+//   setTimeout(checkScrollEnd, 80);
+// }
