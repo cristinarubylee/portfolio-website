@@ -94,7 +94,7 @@ a {
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  padding: 5%;
+  padding: 10%;
   box-sizing: border-box;
   overflow: hidden;
   color: var(--accent);margin: 0;
@@ -125,7 +125,7 @@ a {
 }
 
 .hero-text h1 {
-  font-size: clamp(3rem, 5vw, 3.9rem); 
+  font-size: clamp(3rem, 5vw, 3.5rem); 
   line-height: 1.2;
   display: inline-block;
   white-space: nowrap;
@@ -167,7 +167,15 @@ a {
   box-sizing: border-box;
   padding: 10%;
   background-color: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* .portfolio-section div {
+  box-sizing: content-box;
+  width: clamp(200px, 50vw, 400px);
+} */
 
 .portfolio-section h2 {
   font-size: 2rem;
@@ -175,13 +183,12 @@ a {
   margin-bottom: 2rem;
   text-align: center;
   color: var(--accent);
-  /* font-family: 'Lucida Console', Geneva, sans-serif; */
 }
 
 .portfolio-carousel {
-  width: clamp(500px, 50vw, 900px);
-  width: auto;
+  width: clamp(600px, 80vw, 9000px);
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .portfolio-carousel a {
@@ -196,7 +203,7 @@ a {
 }
 
 .portfolio-card {
-  width: clamp(200px, 50vw, 500px);
+  width: clamp(250px, 50vw, 350px);
   height: auto;
   padding: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -224,6 +231,11 @@ a.is-selected .portfolio-card {
   font-size: 0.9rem;
   color: var(--text);
 }
+
+.flickity-viewport {
+  margin: 0 auto;
+}
+
 
 /* Contact Section */
 .contact-section {
