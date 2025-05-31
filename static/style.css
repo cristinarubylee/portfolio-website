@@ -22,6 +22,7 @@ body {
   box-sizing: border-box;
   background-color: var(--bg);
   color: var(--text);
+  overflow-x: hidden;
 }
 
 a {
@@ -33,42 +34,35 @@ a {
   flex-direction: column;
 }
 
-/* Header Styles */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: var(--bg-secondary);
-  opacity: 1;
-  color: #473f34;
-  position: sticky;
-  top: 0;
+/* Nav Styles */
+.nav {
+  background-color: var(--bg);
+  margin-left: auto;
+  width: fit-content;
+  position: fixed;
+  top: 10%;
+  right: 1rem;
+  padding: 1rem;
+  border-radius: 200px;
   z-index: 999;
-  font-weight: bold;
+  float: left;
 }
 
-.header-logo a {
+.nav ul {
   display: flex;
-  align-items: center;
-  font-size: 34px;
-  gap: 0.5rem;
-}
-
-.header-logo img {
-  width: 50px;
-  height: auto;
-  transition: width 0.3s ease;
-}
-
-.header-nav ul {
-  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   list-style: none;
+  text-align: right;
   gap: 1rem;
   margin: 0;
   padding: 0;
 }
 
+.nav ul li a {
+  color: var(--text);
+}
+/* 
 .header-nav ul li a {
   color: var(--accent);
   font-size: 1.2rem;
@@ -77,15 +71,15 @@ a {
 }
 
 .header-nav ul li a:hover {
-  background-color: var(--bg);
-}
+  background-color: var(--bg-secondary);
+} */
 
 /* Menu Toggle for Small Screens */
 .menu-toggle {
   display: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: #473f34;
+  color: var(--text);
   margin: 0 auto;
   padding: 0;
   background: none;
@@ -94,9 +88,27 @@ a {
 
 /* Hero Section */
 .hero {
-  color: var(--accent);
-  text-align: center;
-  padding: 50px 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 5%;
+  box-sizing: border-box;
+  overflow: hidden;
+  color: var(--accent);margin: 0;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeDown 0.8s ease-out forwards;
+  animation-delay: 0.2s; 
+}
+
+@keyframes fadeDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-text {
@@ -113,37 +125,47 @@ a {
 }
 
 .hero-text h1 {
-  line-height: 80px;
-  margin-bottom: 0px;
+  font-size: clamp(3rem, 5vw, 3.9rem); 
+  line-height: 1.2;
+  display: inline-block;
+  white-space: nowrap;
+  letter-spacing: 0.07rem;
+  margin: 0;
+}
+
+.hero-text svg {
+  padding-right: 1rem;
+  color: var(--text);
+  width: clamp(20px, 5vw, 35px);
+  height: auto;
 }
 
 .hero-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  background-color: #f0e5c7;
 }
 
 .hero-image img {
-  max-width: 400px;
-}
-
-.hero h1 {
-  font-size: 48px;
-  font-weight: 900;
-  /* font-family: 'Lucida Console', Geneva, sans-serif; */
+  width: clamp(150px, 25vw, 300px);
+  transition: width 0.3 ease;
+  height: auto;
 }
 
 .hero-text p {
-  font-size: 20px;
-  padding: 20px 0;
+  font-size: clamp(1.5rem, 2vw, 1.5rem);
   color: var(--text);
+  white-space: normal;
+  max-width: 500px;
 }
 
 /* Portfolio Section */
 .portfolio-section {
-  padding: 100px 10%;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 10%;
   background-color: var(--bg-secondary);
 }
 
@@ -157,7 +179,8 @@ a {
 }
 
 .portfolio-carousel {
-  max-width: 900px;
+  width: clamp(500px, 50vw, 900px);
+  width: auto;
   margin: 0 auto;
 }
 
@@ -173,7 +196,8 @@ a {
 }
 
 .portfolio-card {
-  width: 300px;
+  width: clamp(200px, 50vw, 500px);
+  height: auto;
   padding: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -203,15 +227,21 @@ a.is-selected .portfolio-card {
 
 /* Contact Section */
 .contact-section {
-  padding: 100px 10%;
+  width: 100vw;
+  height: 100vh;
+  padding: 10%;
+  justify-content: center;
+  align-content: center;
   text-align: center;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .contact-section h2 {
   font-size: 2rem;
   margin: 0px;
   margin-bottom: 1rem;
-  font-family: 'Lucida Console', Geneva, sans-serif;
+  color: var(--accent);
 }
 
 .contact-section p {
@@ -232,7 +262,6 @@ a.is-selected .portfolio-card {
 .contact-section textarea {
   padding: 0.8rem;
   font-size: 1rem;
-  border: 1px solid #473f34;
   border-radius: 5px;
   width: 100%;
   box-sizing: border-box;
@@ -242,7 +271,6 @@ a.is-selected .portfolio-card {
 .contact-section button {
   padding: 0.8rem;
   background-color: var(--accent-secondary);;
-  color: #f0e5c7;
   border: none;
   border-radius: 5px;
   font-size: 1rem;
@@ -270,8 +298,10 @@ a.is-selected .portfolio-card {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .header {
-      flex-wrap: nowrap;
+  .nav {
+    top: 0%;
+    flex-wrap: nowrap;
+    background-color: #00000000;
   }
 
   .header-logo {
@@ -282,33 +312,41 @@ a.is-selected .portfolio-card {
     width: 30px;
   }
 
-  .header-nav ul {
+  .nav ul {
     display: none;
     flex-direction: column;
-    background-color: #473f34;
+    background-color: var(--bg);
+    width: fit-content;
     position: absolute;
     top: 100%;
-    left: 0;
-    width: 100%;
+    right: 1rem;
     text-align: center;
   }
 
-  .header-nav ul.show {
+  .nav ul.show {
     display: flex;
   }
 
-  .header-nav ul li a {
+  .nav ul li a {
     display: block;
     padding: 1rem;
     font-size: 1rem;
-    color: #f0e5c7;
+    color: var(--text);
   }
 
-  .header-nav ul li a:hover {
-    background-color: #363030;
+  .nav ul li a:hover {
+    background-color: var(--bg-secondary);
   }
 
   .menu-toggle {
     display: block;
+  }
+
+  .hero {
+    padding: 50px 10%;
+  }
+
+  .hero-image {
+    display: none;
   }
 }
