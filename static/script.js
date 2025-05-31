@@ -60,10 +60,39 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('wheel', handleScroll, { passive: false });
 document.addEventListener('keydown', handleKeyDown);
 
+let touchStartY = 0;
+let touchEndY = 0;
+const minSwipeDistance = 50;
+document.addEventListener('touchstart', handleTouchStart, { passive: true });
+document.addEventListener('touchend', handleTouchEnd, { passive: false });
+
 let isScrolling = false;
 let currentSection = "top";
 let isCentered = true;
 const sectionOrder = ["top", "portfolio", "contact"];
+
+function handleTouchStart(event) {
+  touchStartY = event.touches[0].clientY;
+}
+
+function handleTouchEnd(event) {
+  if (isScrolling) {
+    event.preventDefault();
+    return;
+  }
+  
+  touchEndY = event.changedTouches[0].clientY;
+  const swipeDistance = touchStartY - touchEndY;
+  
+  // Only trigger if swipe distance is significant enough
+  if (Math.abs(swipeDistance) < minSwipeDistance) {
+    event.preventDefault();
+    return;
+  }
+  
+  const direction = swipeDistance > 0 ? 1 : -1;
+  navigateToSection(direction, event);
+}
 
 function handleScroll(event) {
   if (isScrolling) {
