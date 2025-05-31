@@ -65,8 +65,14 @@ let touchEndY = 0;
 const minSwipeDistance = 50;
 document.addEventListener('touchstart', handleTouchStart, { passive: true });
 document.addEventListener('touchend', handleTouchEnd, { passive: false });
+document.addEventListener('touchmove', (event) => {
+  if (isSwiping && !isInteractiveElement(event.target)) {
+    event.preventDefault();
+  }
+}, { passive: false });
 
 let isScrolling = false;
+let isSwiping = false;
 let currentSection = "top";
 let isCentered = true;
 const sectionOrder = ["top", "portfolio", "contact"];
@@ -76,6 +82,7 @@ function handleTouchStart(event) {
     return;
   }
   touchStartY = event.touches[0].clientY;
+  isSwiping = true;
 }
 
 function handleTouchEnd(event) {
