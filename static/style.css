@@ -62,17 +62,7 @@ a {
 .nav ul li a {
   color: var(--text);
 }
-/* 
-.header-nav ul li a {
-  color: var(--accent);
-  font-size: 1.2rem;
-  padding: 10px;
-  border-radius: 5px;
-}
 
-.header-nav ul li a:hover {
-  background-color: var(--bg-secondary);
-} */
 
 /* Menu Toggle for Small Screens */
 .menu-toggle {
@@ -133,8 +123,13 @@ a {
   margin: 0;
 }
 
+.hero-text a{
+  display: inline-flex;
+  align-items: center; 
+  margin-right: 1rem;
+}
+
 .hero-text svg {
-  padding-right: 1rem;
   color: var(--text);
   width: clamp(20px, 5vw, 35px);
   height: auto;
@@ -158,6 +153,98 @@ a {
   white-space: normal;
   max-width: 500px;
 }
+
+.sparkle {
+    position: fixed;
+    font-size: 5vw;
+    color: var(--accent);
+    user-select: none;
+    font-family: Arial, sans-serif;
+    transition: all 0.4s ease-out;
+    animation: float 4s infinite ease-in-out;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.sparkle::before {
+    content: '✦';
+}
+
+.sparkle:nth-child(1) {
+  top: 15%;
+  left: 50%;
+  animation-delay: -0.2s;
+  animation-duration: 4s;
+}
+
+.sparkle:nth-child(2) {
+  top: 25%;
+  left: 75%;
+  animation-delay: -1.1s;
+  animation-duration: 3.5s;
+}
+
+.sparkle:nth-child(3) {
+  top: 50%;
+  left: 85%;
+  animation-delay: -0.7s;
+  animation-duration: 4.2s;
+}
+
+.sparkle:nth-child(4) {
+  top: 75%;
+  left: 75%;
+  animation-delay: -1.8s;
+  animation-duration: 3.7s;
+}
+
+.sparkle:nth-child(5) {
+  top: 85%;
+  left: 50%;
+  animation-delay: -0.4s;
+  animation-duration: 4.6s;
+}
+
+.sparkle:nth-child(6) {
+  top: 75%;
+  left: 20%;
+  animation-delay: -2.3s;
+  animation-duration: 3.9s;
+}
+
+.sparkle:nth-child(7) {
+  top: 50%;
+  left: 5%;
+  animation-delay: -1.3s;
+  animation-duration: 4.1s;
+}
+
+.sparkle:nth-child(8) {
+  top: 25%;
+  left: 10%;
+  animation-delay: -0.9s;
+  animation-duration: 4.4s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+        opacity: 0.8;
+    }
+    25% {
+        transform: translate(20px, -30px) rotate(90deg) scale(1.2);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-15px, -20px) rotate(180deg) scale(0.8);
+        opacity: 0.6;
+    }
+    75% {
+        transform: translate(30px, 10px) rotate(270deg) scale(1.1);
+        opacity: 0.9;
+    }
+}
+
 
 /* Portfolio Section */
 .portfolio-section {
@@ -360,5 +447,9 @@ a.is-selected .portfolio-card {
 
   .hero-image {
     display: none;
+  }
+
+  .hero-text svg{
+    width: 3rem;
   }
 }

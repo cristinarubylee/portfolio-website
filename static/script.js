@@ -72,6 +72,9 @@ let isCentered = true;
 const sectionOrder = ["top", "portfolio", "contact"];
 
 function handleTouchStart(event) {
+  if (isInteractiveElement(event.target)) {
+    return;
+  }
   touchStartY = event.touches[0].clientY;
 }
 
@@ -86,12 +89,17 @@ function handleTouchEnd(event) {
   
   // Only trigger if swipe distance is significant enough
   if (Math.abs(swipeDistance) < minSwipeDistance) {
-    event.preventDefault();
     return;
   }
   
   const direction = swipeDistance > 0 ? 1 : -1;
   navigateToSection(direction, event);
+}
+
+function isInteractiveElement(element) {
+  // Check if element or any parent is interactive
+  const interactiveSelectors = 'a, button, input, textarea, select, [onclick], .clickable, svg, path';
+  return element.closest(interactiveSelectors) !== null;
 }
 
 function handleScroll(event) {
@@ -134,7 +142,6 @@ function navigateToSection(direction, event) {
     currentSection = nextSection;
     isScrolling = false;
     isCentered = true;
-    accumulatedDelta = 0;
   });
 }
 
