@@ -20,11 +20,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('contactForm');
+  const submitButton = form?.querySelector('button[type="submit]');
   
-  if (form) {
+  if (form && submitButton) {
       form.addEventListener('submit', async function(event) {
           event.preventDefault(); 
           
+          submitButton.disabled = true;
+          const originalText = submitButton.textContent;
+          submitButton.textContent = 'Loading...'
+
           const formData = new FormData(form);
           
           try {
@@ -45,6 +50,9 @@ document.addEventListener('DOMContentLoaded', function() {
               }
           } catch (error) {
               alert("An error occurred while sending the message.");
+          } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = originalText;
           }
       });
   }
