@@ -240,9 +240,9 @@ section {
 }
 
 .portfolio-section h2 {
-  font-size: clamp(3rem, 2vw, 5rem);
+  font-size: 2rem;
   margin: 0px;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   text-align: center;
   color: var(--accent);
 }
@@ -280,7 +280,7 @@ a.is-selected .portfolio-card {
 }
 
 .portfolio-card img {
-  width: 100%;
+  width: 50%;
   border-radius: 30px;
   margin-bottom: 1rem;
 }
@@ -352,7 +352,8 @@ a.is-selected .portfolio-card {
   cursor: pointer;
   width: 100%;
   transition: background-color 0.3s ease;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  color:#ffffff;
 }
 
 .contact-section button:hover {
@@ -403,6 +404,6 @@ a.is-selected .portfolio-card {
   }
 
   .portfolio-section h2{
-    font-size: 3rem;
+    padding: 0 100px;
   }
 }

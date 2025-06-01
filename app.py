@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash, redirect, jsonify
+from flask import Flask, render_template, request, jsonify
 from flask_mail import Mail, Message
 from dotenv import load_dotenv
 import os, requests
@@ -35,7 +35,7 @@ def contact():
         if not captcha_verify.get("success"):
             return jsonify({"success": False, "message": "reCAPTCHA verification failed. Please try again."})
 
-        # # Form data
+        # Form data
         name = request.form["name"]
         email = request.form["email"]
         message = request.form["message"]
