@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('contactForm');
-  const submitButton = form?.querySelector('button[type="submit]');
+  const submitButton = form?.querySelector('button[type="submit"]');
   
   if (form && submitButton) {
       form.addEventListener('submit', async function(event) {
